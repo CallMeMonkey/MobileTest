@@ -4,13 +4,17 @@
     android:id="@+id/activity_list_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.monkey.mobiletest.ListViewActivity">
+    tools:context="com.example.monkey.mobiletest.ListViewActivity"
+    android:background="@android:color/holo_orange_light">
+
     <ListView
         android:id="@+id/List_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+
+        >
     </ListView>
 
 </RelativeLayout>
