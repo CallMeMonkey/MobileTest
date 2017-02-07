@@ -6,27 +6,69 @@ package com.example.monkey.mobiletest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.monkey.mobiletest.Adapter.ListViewAdapter;
 
+import java.util.ArrayList;
+
 public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     private ListView ListView;
+    private ArrayList<String> listResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
+
+        listResult = new ArrayList<String>();
+        createFakeResult();
+
         initialView();
+    }
+
+    public void createFakeResult(){
+        listResult.add("a");
+        listResult.add("b");
+        listResult.add("c");
+        listResult.add("d");
+        listResult.add("e");
+        listResult.add("f");
+        listResult.add("g");
+        listResult.add("h");
+        listResult.add("i");
+        listResult.add("j");
+        listResult.add("k");
+        listResult.add("l");
+        listResult.add("m");
+        listResult.add("n");
+        listResult.add("o");
+
+
     }
 
     private void initialView(){
         ListView = (ListView) findViewById(R.id.List_view);
-        ListViewAdapter listViewAdapter = new ListViewAdapter(this);
+        View view = getLayoutInflater().inflate(R.layout.list_view_header, null);
+
+        LinearLayout listViewHeader = (LinearLayout) view.findViewById(R.id.list_view_header);
+        ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
+        ListView.addHeaderView(listViewHeader);
+
+        TextView tv = new TextView(this);
+        tv.setText("No more content.");
+        tv.setTextSize(26);
+        tv.setGravity(Gravity.CENTER);
+        ListView.addFooterView(tv);
+
         ListView.setAdapter(listViewAdapter);
         ListView.setOnItemClickListener(this);
     }
@@ -34,5 +76,6 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, "ListView was clicked at position:"+ position, Toast.LENGTH_LONG).show();
+        Log.d("Name", String.valueOf(position));
     }
 }
