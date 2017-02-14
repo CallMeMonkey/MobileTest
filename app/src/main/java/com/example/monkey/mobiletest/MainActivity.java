@@ -9,10 +9,18 @@ import android.widget.Toast;
 
 import com.example.monkey.mobiletest.util.UtilLog;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends BaseActivity {
 
     private ImageButton bt1;
     private ImageButton bt3;
+
+    @OnClick(R.id.bt2)
+    public void button2Click(){
+        toActivity(DialogActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +28,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initialView();
         initialListener();
+        ButterKnife.bind(this);
     }
 
     private void initialView(){
