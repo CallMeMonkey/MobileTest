@@ -4,6 +4,8 @@ package com.example.monkey.mobiletest;
  * Created by Monkey on 1/25/17.
  */
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +25,7 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
 
     private ListView ListView;
     private ArrayList<String> listResult;
+    //ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +59,9 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     }
 
     private void initialView(){
-        ListView = (ListView) findViewById(R.id.List_view);
-        View view = getLayoutInflater().inflate(R.layout.list_view_header, null);
 
+        View view = getLayoutInflater().inflate(R.layout.list_view_header, null);
+        ListView = (ListView) findViewById(R.id.List_view);
         LinearLayout listViewHeader = (LinearLayout) view.findViewById(R.id.list_view_header);
         ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
         ListView.addHeaderView(listViewHeader);
@@ -77,5 +80,13 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, "ListView was clicked at position:"+ position, Toast.LENGTH_LONG).show();
         Log.d("Name", String.valueOf(position));
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("message", "ListView");
+        setResult(RESULT_OK, intent);
+        super.onBackPressed();
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/combined_linear"
+        >
+
+        <android.support.v4.view.ViewPager
+
+            android:id="@+id/combined_view_pager"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+        </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/combined_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/combined_linear"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        >
+    </ListView>
+
+</RelativeLayout>

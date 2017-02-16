@@ -2,6 +2,7 @@ package com.example.monkey.mobiletest;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
@@ -32,9 +33,10 @@ public class DialogActivity extends BaseActivity {
     public void okClick(){
         switch (checkedID){
             case R.id.rb1:
+                normalDialog();
                 break;
             case R.id.rb2:
-                normalDialog();
+                listDialog();
                 break;
             case R.id.rb3:
                 singleChoiceDialog();
@@ -52,10 +54,25 @@ public class DialogActivity extends BaseActivity {
                 inputDialog();
                 break;
             case R.id.rb8:
+                customDialog();
                 break;
 
         default:
         }
+    }
+
+    private void customDialog() {
+        final CustomDialog dialog = new CustomDialog(this, new CustomDialog.ICustomDialogEventListener() {
+            @Override
+            public void onClickListener() {
+                Intent intent = new Intent();
+                intent.putExtra("message", "Dialog");
+                setResult(RESULT_OK, intent);
+                finish();
+                //toastShort("OK button was clicked");
+            }
+        });
+        dialog.show();
     }
 
     private void inputDialog() {
