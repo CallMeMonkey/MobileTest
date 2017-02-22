@@ -30,9 +30,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BaseActivity"></activity>
-        <activity android:name=".DialogActivity"></activity>
-        <activity android:name=".CombinedActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".CombinedActivity" />
+        <activity android:name=".A"
+            android:launchMode="standard"/>
+        <activity android:name=".B"
+            android:launchMode="singleTop"/>
+        <activity android:name=".C"
+            android:launchMode="singleTask"/>
+        <activity android:name=".D"
+            android:launchMode="singleInstance"
+            ></activity>
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ public class MainActivity extends BaseActivity {
     private ImageButton bt1;
     private ImageButton bt3;
     private ImageButton bt4;
+    private ImageButton bt5;
 
     @OnClick(R.id.bt2)
     public void button2Click(){
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);
         bt4 = (ImageButton) findViewById(R.id.bt4);
+        bt5 = (ImageButton) findViewById(R.id.bt5);
     }
 
     private void initialListener(){
@@ -69,6 +71,15 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 toActivity(CombinedActivity.class);
+//                Intent intent = new Intent(v.getContext(), ListViewActivity.class);
+//                startActivity(intent);
+            }
+        });
+
+        bt5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(A.class);
 //                Intent intent = new Intent(v.getContext(), ListViewActivity.class);
 //                startActivity(intent);
             }

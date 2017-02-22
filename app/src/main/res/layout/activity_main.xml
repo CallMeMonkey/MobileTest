@@ -29,6 +29,7 @@
             android:layout_centerInParent="true"/>
 
         <ImageButton
+            android:id="@+id/bt5"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@color/white"

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_a"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.monkey.mobiletest.A">
+
+    <TextView
+        android:layout_width="500dp"
+        android:layout_height="400dp"
+        android:text="A"
+        android:textSize="400sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_green_light">
+
+        <ImageButton
+            android:id="@+id/btc1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/btc2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/btc3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btc4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
