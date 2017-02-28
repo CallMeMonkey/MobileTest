@@ -33,15 +33,19 @@
         <activity android:name=".BaseActivity" />
         <activity android:name=".DialogActivity" />
         <activity android:name=".CombinedActivity" />
-        <activity android:name=".A"
-            android:launchMode="standard"/>
-        <activity android:name=".B"
-            android:launchMode="singleTop"/>
-        <activity android:name=".C"
-            android:launchMode="singleTask"/>
-        <activity android:name=".D"
-            android:launchMode="singleInstance"
-            ></activity>
+        <activity
+            android:name=".A"
+            android:launchMode="standard" />
+        <activity
+            android:name=".B"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".C"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".D"
+            android:launchMode="singleInstance" />
+        <activity android:name=".timerActivity"></activity>
     </application>
 
 </manifest>

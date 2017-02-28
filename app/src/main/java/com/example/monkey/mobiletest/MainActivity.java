@@ -26,6 +26,11 @@ public class MainActivity extends BaseActivity {
         startActivityForResult(intent, 2);
     }
 
+    @OnClick(R.id.timer)
+    public void btTimerClick(){
+        toActivity(timerActivity.class);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
