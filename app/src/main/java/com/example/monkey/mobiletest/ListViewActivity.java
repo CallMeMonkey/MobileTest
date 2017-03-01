@@ -74,6 +74,7 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
 
         ListView.setAdapter(listViewAdapter);
         ListView.setOnItemClickListener(this);
+        ListView.invalidateViews();
     }
 
     @Override

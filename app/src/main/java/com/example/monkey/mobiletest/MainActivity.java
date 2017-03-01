@@ -20,13 +20,18 @@ public class MainActivity extends BaseActivity {
     private ImageButton bt4;
     private ImageButton bt5;
 
+    @OnClick(R.id.animation_bt)
+    public void toActivityA(){
+        toActivity(AnimationActivity.class);
+    }
+
     @OnClick(R.id.bt2)
     public void button2Click(){
         Intent intent = new Intent(this, DialogActivity.class);
         startActivityForResult(intent, 2);
     }
 
-    @OnClick(R.id.timer)
+    @OnClick(R.id.timer_bt)
     public void btTimerClick(){
         toActivity(timerActivity.class);
     }
