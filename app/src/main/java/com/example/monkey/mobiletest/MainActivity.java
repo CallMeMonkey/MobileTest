@@ -1,20 +1,18 @@
 package com.example.monkey.mobiletest;
 
-import android.animation.Animator;
 import android.content.Intent;
-import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.monkey.mobiletest.bean.Book;
+import com.example.monkey.mobiletest.lifecycle.A;
 import com.example.monkey.mobiletest.util.UtilLog;
 
 import butterknife.BindView;
@@ -28,9 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
     private ImageButton bt4;
     private ImageButton bt5;
     private GestureDetector mGestureDector;
-    private RelativeLayout relative_rd;
-    //private RadioGroup radioGroup;
-    private int checkedItem;
+    private int checkedID;
 
     @BindView(R.id.fl)
     FrameLayout fl;
@@ -51,43 +47,32 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
         startActivityForResult(intent, 2);
     }
 
-    @OnClick(R.id.radio_bt)
-    public void radioBt(){
-        relative_rd = (RelativeLayout) findViewById(R.id.Relative_rg);
-        relative_rd.setVisibility(View.VISIBLE);
-    }
-
-    @BindView(R.id.radio_content) RadioGroup radioGroup;
-
-    @OnClick(R.id.bt_cancel)
-    public void cancelClick(){
-        switch (checkedItem){
-            case R.id.rb1:
-                toActivity(CombinedActivity.class);
-                break;
-            case R.id.rb2:
-                toActivity(CombinedActivity.class);
-                break;
-            default:
-        }
-    }
-
-    @OnClick(R.id.bt_okay)
-    public void okayClick(){
-        switch (checkedItem){
-            case R.id.rb1:
-                toActivity(ListViewActivity.class);
-                break;
-            case R.id.rb2:
-                toActivity(DialogActivity.class);
-                break;
-            default:
-        }
-    }
-
     @OnClick(R.id.timer_bt)
     public void btTimerClick(){
         toActivity(timerActivity.class);
+    }
+
+    @OnClick(R.id.radio_bt)
+    public void radioClick(){
+        final ClickDialog dialog = new ClickDialog(this, new ClickDialog.IClickDialogEventListenerClick() {
+            @Override
+            public void onClickListener() {
+                finish();
+            }
+
+            public void onToListView() {
+                toActivity(ListViewActivity.class);
+            }
+
+            public void onToDialog(){
+                toActivity(DialogActivity.class);
+            }
+
+            public void onToCombined(){
+                toActivity(CombinedActivity.class);
+            }
+        });
+        dialog.show();
     }
 
     @Override
@@ -100,12 +85,6 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
         mGestureDector = new GestureDetector(this, new simpleGestureListener());
         fl.setOnTouchListener(this);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId){
-                toastShort("You checked the RadioButton" + checkedId);
-                checkedItem = checkedId;
-            }
-        });
     }
 
     private void initialView(){

@@ -1,11 +1,13 @@
-package com.example.monkey.mobiletest;
+package com.example.monkey.mobiletest.lifecycle;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class B extends BaseActivity {
+import com.example.monkey.mobiletest.BaseActivity;
+import com.example.monkey.mobiletest.R;
+
+public class C extends BaseActivity {
 
     private ImageButton btc1;
     private ImageButton btc2;
@@ -15,7 +17,7 @@ public class B extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_b);
+        setContentView(R.layout.activity_c);
         initialView();
         initialListener();
     }

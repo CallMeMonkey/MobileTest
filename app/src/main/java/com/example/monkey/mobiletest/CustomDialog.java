@@ -14,6 +14,7 @@ import butterknife.OnClick;
 
 public class CustomDialog extends Dialog {
 
+
     @OnClick(R.id.dialog_ok)
     public void okClick(){
         dismiss();

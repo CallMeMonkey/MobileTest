@@ -34,20 +34,22 @@
         <activity android:name=".DialogActivity" />
         <activity android:name=".CombinedActivity" />
         <activity
-            android:name=".A"
+            android:name=".lifecycle.A"
             android:launchMode="standard" />
         <activity
-            android:name=".B"
+            android:name=".lifecycle.B"
             android:launchMode="singleTop" />
         <activity
-            android:name=".C"
+            android:name=".lifecycle.C"
             android:launchMode="singleTask" />
         <activity
-            android:name=".D"
+            android:name=".lifecycle.D"
             android:launchMode="singleInstance" />
         <activity android:name=".timerActivity" />
         <activity android:name=".AnimationActivity" />
-        <activity android:name=".AnimatorActivity"></activity>
+        <activity android:name=".AnimatorActivity" />
+        <activity android:name=".ClickDialogActivity" />
+        <activity android:name=".ClickDialog"></activity>
     </application>
 
 </manifest>

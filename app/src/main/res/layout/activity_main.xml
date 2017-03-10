@@ -128,56 +128,6 @@
             android:textAllCaps="false"
             android:layout_marginLeft="300dp"/>
 
-        <RelativeLayout
-            android:id="@+id/Relative_rg"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="100dp"
-            android:visibility="invisible"
-            >
-
-            <RadioGroup
-                android:id="@+id/radio_content"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@android:color/black"
-                >
-                <RadioButton
-                    android:id="@+id/rb1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="left|center_vertical"
-                    android:text="Dialog 1"/>
-
-                <RadioButton
-                    android:id="@+id/rb2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="left|center_vertical"
-                    android:text="Dialog 2"/>
-            </RadioGroup>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="cancel"
-                android:layout_marginTop="100dp"
-                android:id="@+id/bt_cancel"
-                />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="110dp"
-                android:text="ok"
-                android:layout_marginTop="100dp"
-                android:id="@+id/bt_okay"
-                />
-
-        </RelativeLayout>
-
     </FrameLayout>
 
 </RelativeLayout>
