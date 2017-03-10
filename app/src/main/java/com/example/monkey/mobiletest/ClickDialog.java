@@ -31,7 +31,6 @@ public class ClickDialog extends Dialog {
                 break;
             default:
                 dismiss();
-                listener.onClickListener();
         }
     }
 
@@ -47,13 +46,13 @@ public class ClickDialog extends Dialog {
                 listener.onToCombined();
                 break;
             default:
+                dismiss();
         }
     }
 
     private IClickDialogEventListenerClick listener;
 
     public interface IClickDialogEventListenerClick{
-        public void onClickListener();
         public void onToListView();
         public void onToDialog();
         public void onToCombined();

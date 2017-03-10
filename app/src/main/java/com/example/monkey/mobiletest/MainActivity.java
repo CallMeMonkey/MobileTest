@@ -2,13 +2,11 @@ package com.example.monkey.mobiletest;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.monkey.mobiletest.bean.Book;
@@ -26,7 +24,6 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
     private ImageButton bt4;
     private ImageButton bt5;
     private GestureDetector mGestureDector;
-    private int checkedID;
 
     @BindView(R.id.fl)
     FrameLayout fl;
@@ -56,18 +53,16 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
     public void radioClick(){
         final ClickDialog dialog = new ClickDialog(this, new ClickDialog.IClickDialogEventListenerClick() {
             @Override
-            public void onClickListener() {
-                finish();
-            }
-
             public void onToListView() {
                 toActivity(ListViewActivity.class);
             }
 
+            @Override
             public void onToDialog(){
                 toActivity(DialogActivity.class);
             }
 
+            @Override
             public void onToCombined(){
                 toActivity(CombinedActivity.class);
             }
